@@ -1,0 +1,17 @@
+<%= form_with(model: list_trip, local: true) do |form| %>
+  <% if list_trip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(list_trip.errors.count, "error") %> prohibited this list_trip from being saved:</h2>
+
+      <ul>
+      <% list_trip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
