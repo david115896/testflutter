@@ -30,7 +30,7 @@ Activity.create!(name:"Musée Archéologique du Carmo", price: 12.5, city: City.
 #Activity.create(name:" ", price: 12.5, city: City.find_by(title:"Lisbonne") ,image:"")
 
 Trip.create!(date: "12/05/2020", city: City.find_by(title:"Lisbonne"))
-Trip.create!(date: "07/24/2020", city: City.find_by(title:"Zagreb"))
+Trip.create!(date: "24/05/2020", city: City.find_by(title:"Zagreb"))
 
 ListTrip.create!(activity: Activity.where(city: City.find_by(title:"Lisbonne")).sample, trip: Trip.find_by(city: City.find_by(title:"Lisbonne")))
 ListTrip.create!(activity: Activity.where(city: City.find_by(title:"Lisbonne")).sample, trip: Trip.find_by(city: City.find_by(title:"Lisbonne")))
