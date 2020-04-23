@@ -5,10 +5,10 @@ class CitiesController < ApplicationController
   # GET /cities.json
   def index
     @cities = City.all
-    respond_to do |format|
-      format.html
-      format.json {render json: @cities.as_json(only: [:id, :title, :photo], include: [:activities])}
-    end
+    #respond_to do |format|
+    #  format.html
+    #  format.json {render json: @cities.as_json(only: [:id, :title, :photo], include: [:activities])}
+    #end
     #render json: @cities 
   end
 

@@ -1,2 +1,2 @@
-json.extract! city, :id, :created_at, :updated_at
+json.extract! city, :id, :title, :photo, :activities
 json.url city_url(city, format: :json)

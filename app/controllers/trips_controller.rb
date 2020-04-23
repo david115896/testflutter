@@ -5,10 +5,6 @@ class TripsController < ApplicationController
   # GET /trips.json
   def index
     @trips = Trip.all
-    respond_to do |format|
-      format.html
-      format.json {render json: @trips.as_json(only: [:id, :title, :photo], include: [:list_activities])}
-    end
   end
 
   # GET /trips/1
