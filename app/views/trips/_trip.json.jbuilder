@@ -1,2 +1,2 @@
-json.extract! trip, :id, :date, :list_trips
+json.extract! trip, :id, :date, :activities
 json.url trip_url(trip, format: :json)
