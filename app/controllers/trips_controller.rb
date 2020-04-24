@@ -33,7 +33,7 @@ class TripsController < ApplicationController
     #print(jsonparams["list_trip"])
 
     respond_to do |format|
-      #if @trip.save
+      if @trip.save
       #  trip_params[:list_trip].each do |line_trip|
       #    begin
       #      LisTrip.create(activity_id: line_trip[:activity_id], trip: @trip)
@@ -49,7 +49,7 @@ class TripsController < ApplicationController
         format.html { render :new }
         format.json { render json: @trip.errors, status: :unprocessable_entity }
       end
-    #end
+  end
   end
 
   # PATCH/PUT /trips/1
