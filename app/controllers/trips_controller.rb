@@ -27,20 +27,21 @@ class TripsController < ApplicationController
   # POST /trips.json
   def create
     @trip = Trip.new(trip_params)
+    print(trip_params)
     #@trip.id = Trip.all.last.id + 1
-    params = JSON.parse(trip_params)
-    print(params)
+    jsonparams = JSON.parse(trip_params)
+    print(jsonparams["list_trip"])
 
     respond_to do |format|
-      if @trip.save
-        trip_params[:list_trip].each do |line_trip|
-          begin
-            LisTrip.create(activity_id: line_trip[:activity_id], trip: @trip)
-          rescue
-            @trip.destroy
-            break
-          end
-        end
+      #if @trip.save
+      #  trip_params[:list_trip].each do |line_trip|
+      #    begin
+      #      LisTrip.create(activity_id: line_trip[:activity_id], trip: @trip)
+      #    rescue
+      #      @trip.destroy
+      #      break
+      #    end
+      #  end
 
         format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
         format.json { render :show, status: :created, location: @trip }
