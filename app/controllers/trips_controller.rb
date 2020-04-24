@@ -29,8 +29,8 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     print(trip_params)
     #@trip.id = Trip.all.last.id + 1
-    #jsonparams = JSON.parse(trip_params)
-    #print(jsonparams["list_trip"])
+    jsonparams = JSON.parse(trip_params)
+    print(jsonparams["list_trip"])
 
     respond_to do |format|
       #if @trip.save
@@ -49,7 +49,7 @@ class TripsController < ApplicationController
         format.html { render :new }
         format.json { render json: @trip.errors, status: :unprocessable_entity }
       end
-    end
+    #end
   end
 
   # PATCH/PUT /trips/1
