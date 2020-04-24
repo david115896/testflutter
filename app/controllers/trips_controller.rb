@@ -27,7 +27,11 @@ class TripsController < ApplicationController
   # POST /trips.json
   def create
     @trip = Trip.new(trip_params)
-    print(trip_params)
+    print("-----------test 1 -------")
+    print(trip_params["list_trips"])
+    print("-----------test 2 -------")
+    print(trip_params[:list_trips])
+
     #@trip.id = Trip.all.last.id + 1
     #jsonparams = JSON.parse(trip_params)
     #print(jsonparams["list_trip"])
