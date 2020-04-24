@@ -31,7 +31,7 @@ class TripsController < ApplicationController
 
     respond_to do |format|
       if @trip.save
-        @trip['list_trips'].each do |list_trip|
+        trip_params['list_trips'].each do |list_trip|
           begin
             LisTrip.create(activity_id: list_trip['activity_id'], city_id: list_trip['city_id'])
           rescue
