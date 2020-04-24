@@ -96,7 +96,7 @@ class TripsController < ApplicationController
     def trip_params
       #params.require(:event).permit(:name, :event_type, :start_time, :end_time, tasks_attributes: [  :id, :start_time, :action ] )
 
-      params.require(:trip).permit(:id, :date, :city_id, ltrips: [:activity_id])
+      params.require(:trip).permit(:id, :date, :city_id, ltrips_attributes: [:id, :activity_id])
  
       
       #params.fetch(:trip, {}).permit(:id,:date,:city_id,:list_trips=>[:activity_id])
