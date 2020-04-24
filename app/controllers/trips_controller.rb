@@ -89,7 +89,7 @@ class TripsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trip_params
-      params.fetch(:trip, {}).permit(:id,:date,:city_id, :list_trips)
+      params.fetch(:trip, {}).permit(:id,:date,:city_id,:list_trip)
 
       #params.fetch(:trip, {})
     end
