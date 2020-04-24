@@ -28,7 +28,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     #@trip.id = Trip.all.last.id + 1
-
+    print(trip_params['list_trips'])
     respond_to do |format|
       if @trip.save
         trip_params['list_trips'].each do |list_trip|
