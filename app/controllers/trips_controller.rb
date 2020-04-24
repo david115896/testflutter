@@ -27,7 +27,7 @@ class TripsController < ApplicationController
   # POST /trips.json
   def create
     @trip = Trip.new(trip_params)
-    print(trip_params)
+    print(list_trips_params)
     #@trip.id = Trip.all.last.id + 1
     #jsonparams = JSON.parse(trip_params)
     #print(jsonparams["list_trip"])
@@ -89,7 +89,7 @@ class TripsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trip_params
-      params.fetch(:trip, {}).permit(:id,:date,:city_id,:list_trip)
+      params.fetch(:trip, {}).permit(:id,:date,:city_id,:list_trips)
 
       #params.fetch(:trip, {})
     end
