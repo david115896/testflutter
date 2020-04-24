@@ -1,4 +1,4 @@
-class ListTrip < ApplicationRecord
+class Ltrip < ApplicationRecord
     belongs_to :activity
     belongs_to :trip, optional: true
 

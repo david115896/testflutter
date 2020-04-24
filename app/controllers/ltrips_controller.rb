@@ -1,10 +1,10 @@
-class ListTripsController < ApplicationController
+class LtripsController < ApplicationController
   before_action :set_list_trip, only: [:show, :edit, :update, :destroy]
 
   # GET /list_trips
   # GET /list_trips.json
   def index
-    @list_trips = ListTrip.all
+    @list_trips = Ltrip.all
   end
 
   # GET /list_trips/1
@@ -14,7 +14,7 @@ class ListTripsController < ApplicationController
 
   # GET /list_trips/new
   def new
-    @list_trip = ListTrip.new
+    @list_trip = Ltrip.new
   end
 
   # GET /list_trips/1/edit
@@ -24,7 +24,7 @@ class ListTripsController < ApplicationController
   # POST /list_trips
   # POST /list_trips.json
   def create
-    @list_trip = ListTrip.new(list_trip_params)
+    @list_trip = Ltrip.new(list_trip_params)
 
     respond_to do |format|
       if @list_trip.save
@@ -64,7 +64,7 @@ class ListTripsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list_trip
-      @list_trip = ListTrip.find(params[:id])
+      @list_trip = Ltrip.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

@@ -1,10 +1,10 @@
 class Trip < ApplicationRecord
     belongs_to :city
     #has_many :activities, through: :list_trips
-    has_many :list_trips, dependent: :destroy
+    has_many :ltrips, dependent: :destroy
 
-    accepts_nested_attributes_for :list_trips,  :allow_destroy => true
-    has_many :activities, through: :list_trips
+    accepts_nested_attributes_for :ltrips,  :allow_destroy => true
+    has_many :activities, through: :ltrips
 
     
     #, :reject_if => :reject_tour, :allow_destroy => true
