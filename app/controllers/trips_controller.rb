@@ -33,7 +33,7 @@ class TripsController < ApplicationController
       if @trip.save
         trip_params['list_trip'].each do |line_trip|
           begin
-            LisTrip.create(activity_id: line_trip['activity_id'], city_id: line_trip['city_id'])
+            LisTrip.create(activity_id: line_trip['activity_id'], trip: @trip])
           rescue
             @trip.destroy
             break
