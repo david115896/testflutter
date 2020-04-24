@@ -28,11 +28,9 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     #@trip.id = Trip.all.last.id + 1
-    print(trip_params[:list_trip])
-    print(trip_params['list_trip'])
-    print(trip_params["list_trip"])
-    print(trip_params('list_trip'))
-    print("heloooooooooooooooooooooo")
+    params = JSON.parse(trip_params)
+    print(params)
+
     respond_to do |format|
       if @trip.save
         trip_params[:list_trip].each do |line_trip|
