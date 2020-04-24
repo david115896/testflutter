@@ -31,6 +31,15 @@ class TripsController < ApplicationController
 
     respond_to do |format|
       if @trip.save
+        @trip['list_trips'].each do |list_trip|
+          begin
+            LisTrip.create(activity_id: list_trip['activity_id'], city_id: list_trip['city_id'])
+          rescue
+            @trip.destroy
+            break
+          end
+        end
+
         format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
         format.json { render :show, status: :created, location: @trip }
       else
