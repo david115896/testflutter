@@ -96,6 +96,6 @@ class TripsController < ApplicationController
     def trip_params
       #params.fetch(:trip, {}).permit(:id,:date,:city_id,:list_trips)
 
-      #params.fetch(:trip, {})
+      params.fetch(:trip, {})
     end
 end
