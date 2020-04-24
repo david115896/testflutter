@@ -28,12 +28,13 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     #@trip.id = Trip.all.last.id + 1
-    print(trip_params['list_trip'])
+    print(trip_params[:list_trip])
+    print("heloooooooooooooooooooooo")
     respond_to do |format|
       if @trip.save
-        trip_params['list_trip'].each do |line_trip|
+        trip_params[:list_trip].each do |line_trip|
           begin
-            LisTrip.create(activity_id: line_trip['activity_id'], trip: @trip)
+            LisTrip.create(activity_id: line_trip[:activity_id], trip: @trip)
           rescue
             @trip.destroy
             break
