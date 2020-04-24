@@ -1,5 +1,7 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
+
 
   # GET /trips
   # GET /trips.json
@@ -59,6 +61,11 @@ class TripsController < ApplicationController
       format.html { redirect_to trips_url, notice: 'Trip was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def create_trip_flutter
+    @trip = Trip.new(trip_params)
+
   end
 
   private
